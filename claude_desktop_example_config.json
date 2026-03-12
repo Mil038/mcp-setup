@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "mcp-setup": {
+      "command": "python",
+      "args": ["ABSOLUTE_PATH/mcp-setup/app/main.py"]
+    }
+  }
+}
