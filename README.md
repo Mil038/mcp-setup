@@ -30,7 +30,7 @@ Simple Tool → Take screenshot
 # Repository Structure
 
 ```
-mcp-masterclass-demo
+mcp-setup
 │
 ├── README.md
 ├── requirements.txt
@@ -54,7 +54,7 @@ Before starting, make sure you have:
 # Step 1 — Clone the Repository & install dependencies
 First, clone the repository and go to the correct directory:
 ```
-git clone https://github.com/YOUR_USERNAME/mcp-masterclass-demo
+git clone https://github.com/Mil038/mcp-setup
 cd mcp-setup
 ```
 Then install the requirements using the following command:
@@ -73,7 +73,7 @@ Open the configuration file and add the following:
 ```
 {
   "mcpServers": {
-    "masterclass-demo": {
+    "mcp-setup": {
       "command": "python",
       "args": ["ABSOLUTE_PATH/mcp-setup/app/main.py"]
     }
