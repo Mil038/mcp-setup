@@ -73,11 +73,9 @@ Open the configuration file and add the following:
 ```
 {
   "mcpServers": {
-    "mcp-setup": {
+    "masterclass-demo": {
       "command": "python",
-      "args": [
-        "/ABSOLUTE/PATH/TO/mcp-setup/app/main.py"
-      ]
+      "args": ["ABSOLUTE_PATH/mcp-setup/app/main.py"]
     }
   }
 }
