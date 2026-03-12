@@ -8,7 +8,7 @@ The goal of this project is to demonstrate how:
 * An **AI client (Claude Desktop) connects to the server**
 * Claude can **call tools automatically**
 
-This demo includes a simple tool that lets Claude Desktop take a screenshot of your desktop and save it locally.
+This demo includes a simple tool that lets Claude Desktop take a screenshot of your desktop and save it locally and show it in the chat.
 
 ---
 
@@ -83,7 +83,7 @@ Open the configuration file and add the following:
 }
 ```
 
-Here, `/ABSOLUTE/PATH/TO/` is the absolute path to the root of the projects directory. You can use `pwd` in the terminal to retrieve the absolute path.
+Here, `ABSOLUTE_PATH/` is the absolute path to the root of the projects directory. You can use `pwd` in the terminal to retrieve the absolute path.
 
 Important:
 * The path **must be an absolute path**
@@ -103,22 +103,22 @@ Claude will now detect the MCP server automatically.
 Ask Claude:
 
 ```
-Give me a random quote
+Take a screenshot of the screen
 ```
 
 Claude will detect that the MCP server provides a tool and may call:
 
 ```
-random_quote()
+Calling tool: screenshot()
 ```
 
-Example output:
+Then the tool runs and returns:
 
 ```
-"AI is the new electricity."
+Screenshot saved to screenshots/screenshot_20260312_194210.png
 ```
 
-This means Claude successfully called the MCP tool.
+This means Claude successfully called the MCP tool, it should also show it in chat.
 
 # Tool Implementation
 
