@@ -8,7 +8,7 @@ The goal of this project is to demonstrate how:
 * An **AI client (Claude Desktop) connects to the server**
 * Claude can **call tools automatically**
 
-This demo includes a simple tool that returns a **random quote**.
+This demo includes a simple tool that lets Claude Desktop take a screenshot of your desktop and save it locally.
 
 ---
 
@@ -22,7 +22,7 @@ Claude Desktop (MCP Client)
 FastMCP Server (Python)
         │
         ▼
-Simple Tool → Random Quote
+Simple Tool → Take screenshot
 ```
 
 ---
@@ -39,9 +39,6 @@ mcp-masterclass-demo
 │   ├── main.py
 │   └── tools.py
 │
-├── data
-│   └── quotes.json
-│
 └── claude_desktop_config_example.json
 ```
 
@@ -55,13 +52,12 @@ Before starting, make sure you have:
 * **Claude Desktop installed**
 
 # Step 1 — Clone the Repository & install dependencies
-
+First, clone the repository and go to the correct directory:
 ```
 git clone https://github.com/YOUR_USERNAME/mcp-masterclass-demo
-```
-```
 cd mcp-setup
 ```
+Then install the requirements using the following command:
 ```
 pip install -r requirements.txt
 ```
@@ -93,7 +89,7 @@ Important:
 * The path **must be an absolute path**
 * Claude Desktop will automatically start the MCP server
 
-# Step 5 — Restart Claude Desktop
+# Step 4 — Restart Claude Desktop
 
 After saving the configuration:
 
@@ -102,7 +98,7 @@ After saving the configuration:
 
 Claude will now detect the MCP server automatically.
 
-# Step 6 — Test the MCP Tool
+# Step 5 — Test the MCP Tool
 
 Ask Claude:
 
@@ -124,39 +120,12 @@ Example output:
 
 This means Claude successfully called the MCP tool.
 
----
-
 # Tool Implementation
 
 The MCP server exposes a single tool:
 
 ```
-random_quote()
+screenshot()
 ```
 
-This tool returns a random quote from a small dataset.
-
-Example dataset:
-
-```
-data/quotes.json
-```
-
----
-
-# Running the MCP Server Manually (Optional)
-
-You can also start the MCP server manually for debugging:
-
-```
-python app/main.py
-```
-
----
-
-# Learning Goals
-
-With this example you learn:
-
-* How to **create an MCP server**
-* How to **expose**
+This tool takes a screenshot of your desktop and saves it.
