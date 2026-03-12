@@ -54,93 +54,44 @@ Before starting, make sure you have:
 * **Python 3.10+**
 * **Claude Desktop installed**
 
-Claude Desktop can be downloaded from:
-
-https://claude.ai/download
-
----
-
-# Step 1 — Clone the Repository
+# Step 1 — Clone the Repository & install dependencies
 
 ```
 git clone https://github.com/YOUR_USERNAME/mcp-masterclass-demo
-cd mcp-masterclass-demo
 ```
-
----
-
-# Step 2 — Install Dependencies
-
-Install the required Python packages:
-
+```
+cd mcp-setup
+```
 ```
 pip install -r requirements.txt
 ```
 
-Dependencies:
-
-```
-fastmcp
-```
-
----
-
 # Step 3 — Configure Claude Desktop
 
-Claude Desktop loads MCP servers from the configuration file:
+Claude Desktop can be downloaded from [here](https://claude.ai/download)
 
-## Mac location
-
-```
-~/Library/Application Support/Claude/claude_desktop_config.json
-```
-
-## Windows location
-
-```
-%APPDATA%\Claude\claude_desktop_config.json
-```
-
----
-
-# Step 4 — Add the MCP Server
+Claude Desktop loads MCP servers from the configuration file. To populate this configuration file, go to `Settings > Developer > Edit Config`. This should open the folder where `claude_desktop_config.json` is located.
 
 Open the configuration file and add the following:
 
 ```
 {
   "mcpServers": {
-    "masterclass-demo": {
+    "mcp-setup": {
       "command": "python",
       "args": [
-        "/ABSOLUTE/PATH/TO/mcp-masterclass-demo/app/main.py"
+        "/ABSOLUTE/PATH/TO/mcp-setup/app/main.py"
       ]
     }
   }
 }
 ```
 
-Example (Mac):
-
-```
-{
-  "mcpServers": {
-    "masterclass-demo": {
-      "command": "python",
-      "args": [
-        "/Users/username/mcp-masterclass-demo/app/main.py"
-      ]
-    }
-  }
-}
-```
+Here, `/ABSOLUTE/PATH/TO/` is the absolute path to the root of the projects directory. You can use `pwd` in the terminal to retrieve the absolute path.
 
 Important:
-
 * The path **must be an absolute path**
 * Claude Desktop will automatically start the MCP server
-
----
 
 # Step 5 — Restart Claude Desktop
 
@@ -150,8 +101,6 @@ After saving the configuration:
 2. Start Claude Desktop again
 
 Claude will now detect the MCP server automatically.
-
----
 
 # Step 6 — Test the MCP Tool
 
